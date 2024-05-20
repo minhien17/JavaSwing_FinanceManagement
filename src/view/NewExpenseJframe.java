@@ -83,6 +83,11 @@ public class NewExpenseJframe extends javax.swing.JFrame {
         jLabel5.setText("Date");
 
         MoneyTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        MoneyTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MoneyTextFieldActionPerformed(evt);
+            }
+        });
 
         CategoryComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
@@ -201,6 +206,7 @@ public class NewExpenseJframe extends javax.swing.JFrame {
         if(money == "") check = 0;
         try{
             expense.setMoney(Integer.parseInt(money)); 
+            if(Integer.parseInt(money)<0) check = 0;
         }catch(Exception ex){
             check = 0;
         }
@@ -215,7 +221,7 @@ public class NewExpenseJframe extends javax.swing.JFrame {
         expense.setNote(NoteTextField.getText());
         
         if(check==0){
-            JOptionPane.showMessageDialog(NewExpenseJframe.this, "Money must be a number", "Invalid", JOptionPane.OK_OPTION);
+            JOptionPane.showMessageDialog(NewExpenseJframe.this, "Money must be a positive number", "Invalid", JOptionPane.OK_OPTION);
         }else{
             service.addExpense(expense);
             panelSwitcher.switchToPanel("Transaction");
@@ -230,6 +236,10 @@ public class NewExpenseJframe extends javax.swing.JFrame {
         panelSwitcher.switchToPanel("Home");
         dispose();
     }//GEN-LAST:event_CancelButtonActionPerformed
+
+    private void MoneyTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MoneyTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MoneyTextFieldActionPerformed
 
     /**
      * @param args the command line arguments

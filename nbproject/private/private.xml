@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/project/FinanceManagement/src/view/HomeJPanel.java</file>
-            <file>file:/D:/project/FinanceManagement/src/view/IncomePanelTransaction.java</file>
+            <file>file:/D:/project/FinanceManagement/src/controller/ChangeScreenController.java</file>
+            <file>file:/D:/project/FinanceManagement/src/dao/DAO.java</file>
+            <file>file:/D:/project/FinanceManagement/src/bean/Bean.java</file>
             <file>file:/D:/project/FinanceManagement/src/view/MainJFrame.java</file>
-            <file>file:/D:/project/FinanceManagement/src/view/Report.java</file>
         </group>
     </open-files>
 </project-private>

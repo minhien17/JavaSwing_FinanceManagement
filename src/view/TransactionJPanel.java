@@ -68,6 +68,7 @@ public class TransactionJPanel extends javax.swing.JPanel implements updateTrans
         
         List<Expense> expenses = service.getAllExpense((int) MonthSpinner.getValue(), String.valueOf(CategoryComboBox.getSelectedItem()));
         
+        idArrays.clear();// làm mới mảng mỗi khi tải lại danh sách
         for(Expense expense: expenses){
             table.addRow(new Object[]{
                 expense.getDate(),expense.getMoney(),expense.getType(),expense.getNote()
@@ -258,7 +259,7 @@ public class TransactionJPanel extends javax.swing.JPanel implements updateTrans
         int row = ExpenseTable.getSelectedRow();
 //        System.out.println(row);
         if(row == -1){
-            JOptionPane.showMessageDialog(TransactionJPanel.this, "Choose one row to edit!", "Error", JOptionPane.OK_OPTION);
+            JOptionPane.showMessageDialog(TransactionJPanel.this, "Choose one row to delete!", "Error", JOptionPane.OK_OPTION);
         } else {
             int id = idArrays.get(row); // lấy id từ vị trí của row
             
